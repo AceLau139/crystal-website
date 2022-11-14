@@ -75,151 +75,111 @@ p {
   color: pink;
 }
 
-//最後的slice
-HTML CSS Result Skip Results Iframe EDIT ON .slider_container {
-  margin: 30px auto;
-  width: 400px;
-  height: 280px;
-  overflow: hidden;
-  position: relative;
-  border: 10px solid;
-  border-top-color: #856036;
-  border-left-color: #5d4426;
-  border-bottom-color: #856036;
-  border-right-color: #5d4426;
-  background-color: #f5f5f5;
-}
-.slider_container:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  opacity: 1;
-  filter: alpha(opacity=100);
-  width: 100%;
-  height: 100%;
-  animation: bk 25s linear;
-}
-.slider_container div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  filter: alpha(opacity=100);
-  left: 100%;
-  width: 100%;
-  -webkit-animation: round 25s linear infinite;
-  animation: round 25s linear infinite;
-}
-.slider_container div img {
-  width: 100%;
-}
-@-webkit-keyframes round {
-  4% {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    left: 0;
-    /* 0 - 1秒 滑入*/
-  }
-  20% {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    left: 0;
-    /* 1- 5秒靜止*/
-  }
-  24% {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    left: -100%;
-    /* 5-6秒滑出*/
-  }
-  26% {
-    opacity: 0;
-    filter: alpha(opacity=0);
-    left: -100%;
-    /* 6-6.5秒變透明*/
-  }
-  28% {
-    opacity: 0;
-    filter: alpha(opacity=0);
-    left: 100%;
-    /* 6.5-7秒回到起始位置*/
-  }
-}
-@keyframes bk {
-  0% {
-    left: 0;
-    /* 初始位置*/
-  }
-  4% {
-    left: -100%;
-    /* 0 - 1秒 滑出*/
-  }
-}
+/* Slide section */
 
-@keyframes bk {
-  0% {
-    left: 0;
-    /* 初始位置*/
-  }
-  4% {
-    left: -100%;
-    /* 0 - 1秒 滑出*/
-  }
-}
-.slider_container div:nth-child(5) {
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-}
-.slider_container div:nth-child(4) {
-  -webkit-animation-delay: 5s;
-  animation-delay: 5s;
-}
-.slider_container div:nth-child(3) {
-  -webkit-animation-delay: 10s;
-  animation-delay: 10s;
-}
-.slider_container div:nth-child(2) {
-  -webkit-animation-delay: 15s;
-  animation-delay: 15s;
-}
-.slider_container div:nth-child(1) {
-  -webkit-animation-delay: 20s;
-  animation-delay: 20s;
-}
-.rwd_slider_container_wrapper {
-  margin: 30px auto !important;
-  width: 420px;
-}
-.rwd_slider_container {
-  position: relative;
-  display: block;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  padding-bottom: 70%;
-  box-sizing: border-box;
-}
-.rwd_slider_container .slider_container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+body {
+  font-family: Arial;
   margin: 0;
+}
+
+* {
   box-sizing: border-box;
 }
 
-/* 最後的slice結束 */
+img {
+  vertical-align: middle;
+}
 
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/* Desktop ver. */
 @media (min-width: 700px) {
   .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* 分成兩份，每份1fr */
-  }
+}
 
   .container article:last-child {
     border-radius: 0 0.625rem 0.625rem 0;
