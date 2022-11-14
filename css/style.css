@@ -1,0 +1,85 @@
+/* ========== General ========== */
+*{
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-header{
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+
+h1,h2,h3,h4,h5,h6{
+
+}
+
+h1{
+    font-size: 3rem;
+    margin: 30px;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+h4{
+    font-size: 1.7rem;
+}
+
+h5{
+    font-size: 1.2rem;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* ========== Navbar style ========== */
+.navbar{
+    font-size: 1.35rem;
+}
+
+.icon-conatiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nav1 {
+  background-color: white; 
+  color: black; 
+}
+
+.Nav1:hover a{
+  background-color: #7cc67f;
+  color: white;
+}
+
+.Nav2 {
+  background-color: white; 
+  color: black; 
+}
+
+.Nav2:hover {
+  background-color: #5ec5e7;
+  color: white;
+}
+
+.Nav3 {
+  background-color: white; 
+  color: black; 
+}
+
+.Nav3:hover {
+  background-color: #f3645a;
+  color: white;
+}
