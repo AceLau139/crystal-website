@@ -1,0 +1,234 @@
+
+/* ========== General ========== */
+*{
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-header{
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+h1,h2,h3,h4,h5,h6{
+
+}
+
+h1{
+  font-size: 3rem;
+  margin: 30px;
+}
+
+h2{
+  font-size: 2.5rem;
+}
+
+h3{
+  font-size: 2rem;
+}
+
+h4{
+  font-size: 1.7rem;
+}
+
+h5{
+  font-size: 1.2rem;
+}
+
+.flex-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* ========== Navbar style ========== */
+.navbar{
+  font-size: 1.35rem;
+}
+
+.icon-conatiner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Nav1 {
+background-color: white; 
+color: black; 
+}
+
+.Nav1:hover a{
+background-color: #7cc67f;
+color: white;
+}
+
+.Nav2 {
+background-color: white; 
+color: black; 
+}
+
+.Nav2:hover {
+background-color: #5ec5e7;
+color: white;
+}
+
+.Nav3 {
+background-color: white; 
+color: black; 
+}
+
+.Nav3:hover {
+background-color: #f3645a;
+color: white;
+}
+
+
+
+
+*{
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Navbar style */
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    background-color: #FCEAFF;
+    padding: 8px;
+}
+
+.icon-conatiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-solid{
+    font-size: 2rem;
+}
+
+.fa-solid:hover{
+    transform:scale(1.2,1.2);
+}
+
+/*-------------------------------------MAIN----------------------------- */
+
+.mainimg{
+ width: 100%;
+
+}
+
+h1{
+text-align: center;
+padding: 50px 50px ;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+.container img {
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+  }
+  
+
+  .Coffee {
+    display: inline;
+    margin-top: 69px;
+    background-color: black;
+    text-align: center;
+    width: 1000px;
+    
+  }
+
+
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #FFA8A8;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .button{
+    margin: 30px 45%;
+  }
+
+.into{
+ width: 50%;
+
+ margin:0 auto;
+}
+
+footer{
+  background-color: gray;
+  text-align: center;
+  padding: 30px;
+
+}
+
+form{
+    text-align: center;
+    padding: 30px;
+}
+
+
+
+.carousel-control {
+  padding-top: 10%;
+  width: 5%;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+
