@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
   
-  <title>Document</title>
+  <title>水晶介紹</title>
 
   <!-- Local CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -59,7 +59,6 @@
         </button>
       </form>
 
-
       <!-- <i class="fa-solid fa-user"></i> -->
     </div>
   </div>
@@ -76,33 +75,27 @@
 
         <div class="slideContainer">
           <div class="mySlides">
-            <div class="numbertext">1 / 6</div>
-            <img src="./img/career.jpg" style="width:100%">
+            <img src="./img/career.jpg">
           </div>
       
           <div class="mySlides">
-            <div class="numbertext">2 / 6</div>
-            <img src="./img/exorcise.jpg" style="width:100%">
+            <img src="./img/exorcise.jpg">
           </div>
       
           <div class="mySlides">
-            <div class="numbertext">3 / 6</div>
-            <img src="./img/health.jpg" style="width:100%">
+            <img src="./img/health.jpg">
           </div>
       
           <div class="mySlides">
-            <div class="numbertext">4 / 6</div>
-            <img src="./img/love.jpg" style="width:100%">
+            <img src="./img/love.jpg">
           </div>
       
           <div class="mySlides">
-            <div class="numbertext">5 / 6</div>
-            <img src="./img/mood.jpg" style="width:100%">
+            <img src="./img/mood.jpg">
           </div>
       
           <div class="mySlides">
-            <div class="numbertext">6 / 6</div>
-            <img src="./img/relationship.jpg" style="width:100%">
+            <img src="./img/relationship.jpg">
           </div>
       
           <!-- <div class="caption-container">
@@ -117,10 +110,7 @@
 
       <h1>綠髮碧璽金晶虎眼石黃水晶14k包金手鍊</h1>
 
-      <p>綠碧髮晶跟綠髮晶不同的是水晶內部的髮絲是綠碧璽，所以又稱為碧璽髮晶，是髮晶中極為稀有的品種。
-        綠碧髮主事業運、招正財，其主事業運的功效是眾多品種中最強的。 綠碧髮有碧璽的力量，有提高思維能力、能推動交到好朋友的緣份、好運道、增強運氣、促成願望。
-        綠碧壐推動佩戴者發現工作中的樂趣，而樂於投入，全力以赴，排除負能量、排解工作煩悶。另外，綠碧髮也對血壓和心臟有平衡作用。
-      </p>
+      <p id="caption"></p>
 
       <ul>
         <li class="price"> $548</li>
@@ -135,25 +125,27 @@
 
     <div class="flex-container">
       <div class="column">
-        <img class="demo cursor" src="./img/career.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+        <img class="demo cursor" src="./img/career.jpg" onclick="currentSlide(1)" alt="綠碧髮晶跟綠髮晶不同的是水晶內部的髮絲是綠碧璽，所以又稱為碧璽髮晶，是髮晶中極為稀有的品種。
+        綠碧髮主事業運、招正財，其主事業運的功效是眾多品種中最強的。 綠碧髮有碧璽的力量，有提高思維能力、能推動交到好朋友的緣份、好運道、增強運氣、促成願望。
+        綠碧壐推動佩戴者發現工作中的樂趣，而樂於投入，全力以赴，排除負能量、排解工作煩悶。另外，綠碧髮也對血壓和心臟有平衡作用。">
       </div>
       <div class="column">
-        <img class="demo cursor" src="./img/exorcise.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+        <img class="demo cursor" src="./img/exorcise.jpg" onclick="currentSlide(2)" alt="Cinque Terre">
       </div>
       <div class="column">
-        <img class="demo cursor" src="./img/health.jpg" style="width:100%" onclick="currentSlide(3)"
+        <img class="demo cursor" src="./img/health.jpg" onclick="currentSlide(3)"
           alt="Mountains and fjords">
       </div>
       <div class="column">
-        <img class="demo cursor" src="./img/love.jpg" style="width:100%" onclick="currentSlide(4)"
+        <img class="demo cursor" src="./img/love.jpg" onclick="currentSlide(4)"
           alt="Northern Lights">
       </div>
       <div class="column">
-        <img class="demo cursor" src="./img/mood.jpg" style="width:100%" onclick="currentSlide(5)"
+        <img class="demo cursor" src="./img/mood.jpg" onclick="currentSlide(5)"
           alt="Nature and sunrise">
       </div>
       <div class="column">
-        <img class="demo cursor" src="./img/relationship.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+        <img class="demo cursor" src="./img/relationship.jpg" onclick="currentSlide(6)" alt="Snowy Mountains">
       </div>
     </div>
   </div>
@@ -173,6 +165,7 @@ function showSlides(n) {
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("demo");
   let captionText = document.getElementById("caption");
+
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
