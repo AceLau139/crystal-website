@@ -1,0 +1,170 @@
+.bigcontainer {
+  box-sizing: border-box;
+  padding: 0px;
+}
+
+.fisrtimg {
+  width: 400px;
+  height: 400px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style-type: none;
+  /* disc 實心圓點是默認值 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.container ul li:first-child {
+  font-size: 2rem;
+  margin-right: 1.5rem;
+}
+
+/* 或者使用nth-child（2） */
+.container ul li:last-child {
+  color: hsl(228, 12%, 48%);
+  text-decoration: line-through;
+}
+
+/* 文字 */
+h1 {
+  color: hsl(212, 21%, 14%);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1rem;
+  color: hsl(228, 12%, 48%);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+p {
+  color: hsl(228, 12%, 48%);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.productName {
+  font-size: 2rem;
+  color: black;
+}
+
+.price {
+  color: #b609ff;
+}
+
+/* Slide section */
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+}
+
+#caption {
+  width: 100%;
+  height: 30%;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+.column img {
+  width: 100%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+/* Desktop ver. */
+@media (min-width: 700px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 分成兩份，每份1fr */
+  }
+
+  .container article:last-child {
+    border-radius: 0 0.625rem 0.625rem 0;
+    margin-top: 0;
+    padding: 1.5rem 1.5rem 0;
+  }
+  .container p {
+    margin-bottom: 1rem;
+  }
+
+  picture img {
+    height: 100%;
+    border-radius: 2;
+  }
+}
