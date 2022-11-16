@@ -54,7 +54,7 @@ window.onload = function() {
         oLi.innerHTML += '<div class="pro_img"><img src="' + data["imgUrl"] + '" width="100%" height="100%"></div>';
         oLi.innerHTML += '<h3 id="h3" class="pro_name"><a rel="nofollow" href="#">' + data["productName"] + '</a></h3>';
         oLi.innerHTML += '<p class="pro_price">HKD$' + data["productPrice"] + '</p>';
-        oLi.innerHTML += '<p class="pro_rank">' + data["productComment"] + '萬人好評</p>';
+        oLi.innerHTML += '<p class="pro_rank">' + data["productComment"] + 'K <i class="fa-regular fa-thumbs-up"></i></p>';
         oLi.innerHTML += '<div class="add_btn">加入購物車</div>';
         oUl.appendChild(oLi);
 
