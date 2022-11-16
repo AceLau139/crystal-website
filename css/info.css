@@ -1,6 +1,16 @@
+.bigcontainer {
+  box-sizing: border-box;
+  padding: 0px;
+}
+
 .fisrtimg {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
@@ -45,8 +55,13 @@ p {
   margin-bottom: 2rem;
 }
 
+.productName {
+  font-size: 2rem;
+  color: black;
+}
+
 .price {
-  color: pink;
+  color: #b609ff;
 }
 
 /* Slide section */

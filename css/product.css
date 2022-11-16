@@ -15,7 +15,7 @@ body {
     position: relative;
     margin: 0;
     height: 50px;
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: 400;
     color: #757575;
     border-top: 1px solid #e0e0e0;
@@ -24,14 +24,15 @@ body {
 .box_head span{
     position: absolute;
     top: -20px;
-    left: 372px;
-    height: 40px;
-    width: 482px;
-    line-height: 40px;
+    left: 30%;
+    right: 30%;
+    height: 3rem;
+    width: 40%;
+    line-height: 3rem;
     text-align: center;
     display: block;
     background-color: #f5f5f5;
-    font-size: 30px;
+    font-size: 2.5rem;
 }
 
 #box {
@@ -39,26 +40,27 @@ body {
     margin: 20px auto;
 }
 
-#box ul {
-    margin-right: -14px;
+#box ol {
     overflow: hidden;
 }
+
 #box li {
-    width: 200px;
+    width: 25%;
     float: left;
-    margin-right: 14px;
     padding: 24px 0 20px;
     background: #FFF;
     text-align: center;
     position: relative;
     cursor: pointer;
-    margin-bottom:14px;
+    margin-bottom: 1rem;
 }
+
 .pro_img {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 18px;
+    width: 75%;
+    height: 75%;
+    margin: 0 auto 1rem;
 }
+
 .pro_name {
     display: block;
     text-overflow: ellipsis;
@@ -68,14 +70,15 @@ body {
 }
 .pro_name a {
     color: #333;
+    text-decoration: none;
 }
 .pro_price {
-    color: #ff6700;
-    margin: 10px;
+    color: #b700ff;
+    margin: 1rem;
 }
 .pro_rank {
     color: #757575;
-    margin: 10px;
+    margin: 1rem;
 }
 #box li:hover .add_btn {
     display: block;
@@ -84,11 +87,9 @@ body {
     opacity: 0;
 }
 #box li .add_btn:hover {
-    background-color: #f60;
+    background-color: #d880fe;
     color: white;
 }
-
-
 
 .add_btn {
     height: 22px;
@@ -99,30 +100,32 @@ body {
     margin-left: -61px;
     line-height: 22px;
     display: none;
-    color: #F60;
-    font-size: 12px;
-    border: 1px solid  #f60;
+    color: #d880fe;
+    font-size: 1rem;
+    border: 1px solid  #d880fe;
 }
+
 .car {
     width: 90%;
     margin: 20px auto;
     background: #FFF;
 }
+
 .car .check{
     width: 50px;
-
 }
+
 .car .check i{
     color: #fff;
     display: inline-block;
     
-    width: 18px;
-    height: 18px;
-    line-height: 18px;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
     border: 1px solid #e0e0e0;
     margin-left: 24px;
     background-color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
     text-align: center;
     vertical-align: middle;
     position: relative;
@@ -130,23 +133,26 @@ body {
     cursor: pointer;
     font-family: "iconfont";
 }
-.i_acity {
 
-    border-color: #ff6700 !important;
-    background-color: #ff6700 !important;
+.i_acity {
+    border-color: #b700ff !important;
+    background-color: #b700ff !important;
 }
+
 .car .img {
-    width: 190px;
+    width: 5rem;
 }
+
 .car .img img {
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin: 3px auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+
 .car .name {
     width: 300px;
 }
+
 .car .name span {
     line-height: 1;
     margin-top: 8px;
@@ -157,94 +163,90 @@ body {
     white-space: nowrap;
     overflow: hidden;
 }
+
 .car .price {
     width: 144px;
     text-align: right;
     padding-right: 84px;
 }
+
 .car .price span {
-    color: #ff6700;
-    font-size: 16px;
+    color: #b700ff;
+    font-size: 1rem;
 }
+
 .car .number{
-    width: 150px;
+    width: 10rem;
 }
+
 .car .subtotal{
-    width: 130px;
+    width: 10rem;
     
 }
+
 .car .ctrl {
-    width: 105px;
+    width: 7.5rem;
     padding-right:25px;
     text-align: center;
 }
+
 .car .ctrl a {
-    font-size: 20px;
+    font-size: 1rem;
     cursor: pointer;
     display: block;
-    width: 26px;
-    height: 26px;
-    margin: 30px auto;
-    line-height: 26px;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 2rem auto;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #d7cdcd;
 }
+
 .car .ctrl a:hover {
-    color: #FFF;
-    background: #ff6700;
-    border-radius: 50%;
+    color: #FF0000;
+    transform: scale(1.25,1.25);
 }
-.head_row {
-    height: 70px;
-    line-height: 70px;
-}
-.head_row, .row {
-    border-bottom: solid 1px #e0e0e0;
-}
-.row {
-    height: 86px;
-    line-height:86px;
-    padding: 15px 0;
-    margin: 0px;
-}
+
 #sum_area{
     width: 90%;
-    height: 60px;
+    height: 2.5rem;
     background: white;
-    margin: 20px auto;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
+
 #sum_area #pay{
-    width:250px;
-    height:60px;
+    width: 5rem;
+    height: 100%;
+    margin-left: 3rem;
     text-align: center;
-    float: right;
-    line-height: 60px;
-    font-size: 19px;
-    background: #FF4B00;
+    font-size: 1.5rem;
+    background: #b700ff;
     color: white;
 }
 #sum_area #pay_amout{
-    width:250px;
-    height:60px;
-    text-align: center;
-    float: right;
-    line-height: 60px;
-    font-size: 16px;
-    color:#FF4B00 ;
+    font-size: 1.5rem;
+    color:#b700ff ;
 }
 #sum_area #pay_amout #price_num{
     width:100px;
     height: 60px;
     font-size: 25px;
-    color:#FF4B00 ;
-/*	float: left;*/
+    color:#b700ff ;
 }
 
 .item_count_i{
     height: 85px;
     width:10%;
-    /*border: 1px solid black;*/
-    float: left;
+    display: flex;
     margin-right: 25px;
 }
+
 .num_count{
     width:150px;
     height:40px;
@@ -303,6 +305,16 @@ body {
     cursor: pointer;
 }
 .i_acity2 {
-    border-color: #ff6700 !important;
-    background-color: #ff6700 !important;
+    border-color: #b700ff !important;
+    background-color: #b700ff !important;
+}
+
+@media only screen and (max-width: 991.98px){
+    .box_head{
+        display: none;
+    }
+
+    #box li{
+        width: 100%;
+    }
 }
