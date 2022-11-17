@@ -1,8 +1,11 @@
 .bigcontainer {
   box-sizing: border-box;
-  padding: 20px;
+  padding: 10px;
 }
 
+.flexcontainer{
+  margin:10px
+}
 .fisrtimg {
   width: 450px;
   height: 450px;
@@ -12,7 +15,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 10px;
+  padding: 2px 0px 10px 12px;
+  
 }
 
 ul {
@@ -34,6 +38,7 @@ ul {
 .container ul li:last-child {
   color: hsl(228, 12%, 48%);
   text-decoration: line-through;
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
 }
 
 /* 文字 */
@@ -54,7 +59,7 @@ h2 {
 p {
   color: hsl(228, 12%, 48%);
   line-height: 1.8;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .productName {
@@ -62,8 +67,15 @@ p {
   color: black;
 }
 
+.top{
+  font-size:23px;
+  margin-bottom:1.5rem;
+}
+
 .price {
-  color: #b609ff;
+  color: #6610f2;
+  font-weight:500;
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
 }
 
 /* Slide section */
@@ -85,7 +97,7 @@ img {
 /* Hide the images by default */
 .mySlides {
   display: none;
-  padding: 10px;
+  padding: 5px;
 }
 
 .mySlides img {
@@ -146,8 +158,46 @@ img {
   opacity: 1;
 }
 
+.container .btn {
+  background-color: grey;
+  color: white;
+  padding: 1rem
+  width: 100%;
+  /* 上下0.625rem 左右2rem */
+  border-radius: 0.625rem;
+  outline: none;
+  /* 輪廓（outline）是繪製於元素周圍的一條線，位於邊框邊緣的外圍，可起到突出元素的作用。 */
+  border: none;
+  cursor: pointer;
+  /* cursor CSS 屬性設置指針上的顯示時（如果有），在指針懸停的相應樣式。 */
+  transition: 0.3s;
+  /* 响应速度 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 鼠標hover過去的時候的效果。 */
+.container .btn:hover {
+  background-color: DarkGrey;
+}
+
+.container .btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.cart {
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+  padding:1rem;
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+}
+
+
 /* Desktop ver. */
-@media (min-width: 800px) {
+@media (min-width: 763px) {
   .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -166,4 +216,9 @@ img {
     border-radius: 10;
     padding: 10px;
   } */
+
+  .container .btn img {
+    width: 50px;
+    height: 50px;
+  }
 }
