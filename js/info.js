@@ -33,7 +33,7 @@ function showSlides(n) {
   productPrice.innerHTML = dots[slideIndex - 1].dataset.price;
   oldPrice.innerHTML = dots[slideIndex - 1].dataset.oldprice;
 
-  return addBtn.setAttribute('data-productname', dots[slideIndex - 1].dataset.proname)
+  addBtn.setAttribute('data-productname', dots[slideIndex - 1].dataset.proname)
 }
 
 addBtn.addEventListener('click', ()=>{

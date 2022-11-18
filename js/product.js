@@ -214,20 +214,48 @@ function getAmount() {
 
 // local storage
 var cartArea = document.querySelector('#car')
+var itemDiv = document.createElement('div')
+
 
 const get =()=>{
     const storage = localStorage.getItem('cartItem');
-    console.log(JSON.parse(storage))
-}
+    console.log(typeof storage)
+    const storageName = (JSON.parse(storage))
+    console.log(typeof storageName)
+    console.log(storageName)
+    
+    var itemDiv = document.createElement("div");
 
-cartArea.addEventListener('click', get)
+    for (const property in storageName) {
+        console.log(`${property}: ${storageName[property]}`);
+
+        //innerHTML into cartArea
+        itemDiv.className = "flex-container hid";
+        itemDiv.innerHTML += `<div class="name left"><span> + ${storageName} + </span></div>`;
+    }
+}
 
 get()
 
-//innerHTML into cartArea
+/* 
+var oDiv = document.createElement("div");
+var data = product[this.index];
+oDiv.className = "flex-container hid";
+oDiv.innerHTML += '<div class="check left"> <i class="i_check" id="i_check" onclick="i_check()" >√</i></div>';
+oDiv.innerHTML += '<div class="img left"><img src="' + data["imgUrl"] + '" ></div>';
+oDiv.innerHTML += '<div class="name left"><span>' + data["productName"] + '</span></div>';
+oDiv.innerHTML += '<div class="price left"><span>' + data["productPrice"] + '元</span></div>';
+oDiv.innerHTML +=' <div class="item_count_i"><div class="num_count"><div class="count_d">-</div><div class="c_num">1</div><div class="count_i">+</div></div></div>'
+oDiv.innerHTML += '<div class="subtotal left"><span>' + data["productPrice"] + '元</span></div>'
+oDiv.innerHTML += '<div class="ctrl left"><a rel="nofollow" href="javascript:;">X</a></div>';
+ */
+
+/* cartArea.addEventListener('click', get) */
+
+
 
 //if(find DOM){
-//  update
+//  get()
 //}
 //else{
 //  X update
