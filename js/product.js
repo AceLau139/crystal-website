@@ -215,14 +215,24 @@ function getAmount() {
 // local storage
 var cartArea = document.querySelector('#car')
 
-const test =()=>{
+const get =()=>{
     const storage = localStorage.getItem('cartItem');
     console.log(JSON.parse(storage))
 }
 
-cartArea.addEventListener('click', test)
+cartArea.addEventListener('click', get)
 
-test()
+get()
+
+//innerHTML into cartArea
+
+//if(find DOM){
+//  update
+//}
+//else{
+//  X update
+//}
+
 
 //
 /* for (const property in products) {

@@ -46,6 +46,12 @@ h5{
 }
 
 /* ========== Navbar style ========== */
+
+/* navbar css */
+.navbar-brand{
+  font-family: 'Dancing Script', cursive;
+}
+
 .navbar{
     font-size: 1.35rem;
 }

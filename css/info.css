@@ -1,9 +1,9 @@
+/* narbar 字體 *//* 價錢字體 */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Dancing+Script&family=Noto+Sans+TC:wght@100&display=swap');
+
 .bigcontainer {
   box-sizing: border-box;
   padding: 10px;
-}
-.navbar-brand{
-font-family:Snell Roundhand, cursive;
 }
 
 .flexcontainer{
@@ -37,18 +37,19 @@ ul {
   margin-right: 1.5rem;
 }
 
+/* 新舊price */
 /* 或者使用nth-child（2） */
 .container ul li:last-child {
   color: hsl(228, 12%, 48%);
   text-decoration: line-through;
-  font-family: Snell Roundhand, cursive;
-  
+  font-family: 'Dancing Script', cursive;
+font-size:0.75rem;
 }
 
 .price {
-  color: #6610f2;
-  font-weight:800;
-  font-family:Snell Roundhand, cursive;
+  color: #8A2BE2;
+  font-weight:1000;
+  font-family: 'Dancing Script', cursive;
 }
 
 /* 文字 */
@@ -81,8 +82,6 @@ p {
   font-size:23px;
   margin-bottom:1.5rem;
 }
-
-
 
 /* Slide section */
 
@@ -165,9 +164,9 @@ img {
 }
 
 .container .btn {
-  background-color: grey;
+  background-color:  DarkGrey;
   color: white;
-  padding: 1rem
+  padding: 0.5rem
   width: 100%;
   /* 上下0.625rem 左右2rem */
   border-radius: 0.625rem;
@@ -186,7 +185,7 @@ img {
 
 /* 鼠標hover過去的時候的效果。 */
 .container .btn:hover {
-  background-color: DarkGrey;
+  background-color: Grey;
 }
 
 .container .btn img {
@@ -195,13 +194,11 @@ img {
 }
 
 .cart {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: white;
-  font-weight: 600;
-  padding:0.5rem;
-  font-family:Arial, sans-serif;
+  font-weight: 520;
+  padding:0.2rem;
 }
-
 
 /* Desktop ver. */
 @media (min-width: 763px) {
