@@ -1,53 +1,31 @@
+myStorage = window.localStorage;
+
+var itemList = [];
+var cartItem = {
+    "imgUrl": proImg,
+    "productName": proName,
+    "productPrice": proPrice,
+    "productComment": proRank,
+};
+
+
+
 window.onload = function() {
-    var product = [{
-            "imgUrl": "./img/career.jpg",
-            "productName": "綠髮碧璽金髮晶虎眼石黃水晶",
-            "productPrice": "548",
-            "productComment": "1"
-        },
-        {
-            "imgUrl": "./img/exorcise.jpg",
-            "productName": "金沙黑曜石黑髮晶黑尖晶石白幽靈",
-            "productPrice": "689",
-            "productComment": "9.7"
-        },
-        {
-            "imgUrl": "./img/health.jpg",
-            "productName": "櫻花瑪瑙白月光石",
-            "productPrice": "488",
-            "productComment": "1.3"
-        },
-        {
-            "imgUrl": "./img/love.jpg",
-            "productName": "粉晶白幽靈藍月光石吊飾",
-            "productPrice": "459",
-            "productComment": "1.1"
-        },
-        {
-            "imgUrl": "./img/mood.jpg",
-            "productName": "櫻花瑪瑙白月光石玫瑰金水晶",
-            "productPrice": "548",
-            "productComment": "2.3"
-        },
-        {
-            "imgUrl": "./img/relationship.jpg",
-            "productName": "阿魯沙黃水晶拉長石葡萄石",
-            "productPrice": "429",
-            "productComment": "3.3"
-        },
-        {
-            "imgUrl": "./img/wisdom.jpg",
-            "productName": "藍月光石海藍寶玫瑰金吊牌水晶",
-            "productPrice": "699",
-            "productComment": "1.2"
-        },
-    ];
 
-    var oBox = document.querySelector("#box");
+    /* var oBox = document.querySelector("#box"); */
     var oCar = document.querySelector("#car");
-    var oUl = document.getElementsByTagName("ol")[0];
 
-    //add items & shopping cart btn
+
+    var proImg = localStorage.getItem('imgUrl');
+    var productName = localStorage.getItem('productName');
+    var productPrice = localStorage.getItem('productPrice');
+    var productComment = localStorage.getItem('productComment');
+
+    function showCart(){
+        proImg.innerHTML += '<div class="img left"><img src="' + productList["imgUrl"] + '" ></div>';
+    }
+/* 
+    //add shopping cart btn
     for (let i = 0; i < product.length; i++) {
         var oLi = document.createElement("li");
         var data = product[i];
@@ -58,8 +36,7 @@ window.onload = function() {
         oLi.innerHTML += '<p class="pro_rank">' + data["productComment"] + 'K <i class="fa-regular fa-thumbs-up"></i></p>';
         oLi.innerHTML += '<div class="add_btn">加入購物車</div>';
         oUl.appendChild(oLi);
-
-    }
+    } */
 
     var aBtn = getClass(oBox, "add_btn");//獲取box下的所有添加購物車按鈕
     var number = 0;//初始化商品數量
@@ -68,7 +45,7 @@ window.onload = function() {
         aBtn[i].index = i;
         aBtn[i].onclick = function() {
             var oDiv = document.createElement("div");
-            var data = product[this.index];
+            var data = productList[this.index];
             oDiv.className = "flex-container hid";
             oDiv.innerHTML += '<div class="check left"> <i class="i_check" id="i_check" onclick="i_check()" >√</i></div>';
             oDiv.innerHTML += '<div class="img left"><img src="' + data["imgUrl"] + '" ></div>';
@@ -99,7 +76,7 @@ window.onload = function() {
                     number--;
                     getAmount();
                 }
-            
+            /* localStorage.removeItem('myCat'); */
             }
             var i_btn = document.getElementsByClassName("count_i");
             for (var k = 0; k < i_btn.length; k++) {
@@ -111,7 +88,7 @@ window.onload = function() {
                     pt = this.parentElement.parentElement.previousElementSibling;
                     //數量值
                     node = bt.parentNode.childNodes[1];
-                    //console.log(node);
+                    console.log(node);
                     num = node.innerText;
                     num = parseInt(num);
                     num++;
@@ -160,7 +137,6 @@ window.onload = function() {
                     getAmount();
                 }
             }
-
         }
     }
 }
@@ -175,6 +151,7 @@ function getClass(oBox, tagname) {
     }
     return aBox;
 }
+
 
 var index = false;
 function checkAll() {
@@ -195,11 +172,13 @@ function checkAll() {
     getAmount();
 }
 
+
+
 //價值合計
 function getAmount() {
     // console.log(ys);
     ns = document.getElementsByClassName("i_acity");
-    //console.log(ns);
+    console.log(ns);
     sum = 0;
     //選中框
     document.getElementById("price_num").innerText = sum;
@@ -211,22 +190,3 @@ function getAmount() {
         document.getElementById("price_num").innerText = sum;
     }
 }
-
-// local storage
-var cartArea = document.querySelector('#car')
-
-const test =()=>{
-    const storage = localStorage.getItem('cartItem');
-    console.log(JSON.parse(storage))
-}
-
-cartArea.addEventListener('click', test)
-
-test()
-
-//
-/* for (const property in products) {
-    console.log(`${property}: ${products[property]}`);
-} */
-
-/* localStorage.removeItem('myCat'); */

@@ -1,15 +1,9 @@
-/* navbar css */
-.navbar-brand{
-  font-family:Snell Roundhand, cursive;
-  font-weight:580
-  }
-  
-
-
-  
 .bigcontainer {
   box-sizing: border-box;
   padding: 10px;
+}
+.navbar-brand{
+font-family:Snell Roundhand, cursive;
 }
 
 .flexcontainer{
