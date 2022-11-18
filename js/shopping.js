@@ -1,4 +1,4 @@
-var shoppingCart = []
+let shoppingCart = []
 
 window.onload = function() {
     var productList = [{
@@ -65,12 +65,44 @@ window.onload = function() {
     // Get all buttons as a NodeList
     var aBtn = document.querySelectorAll('.add_btn');
 
+    console.log(aBtn)
+
     // Convert buttons NodeList to an array
     var aBtnArr = Array.prototype.slice.call(aBtn);
 
     console.log(aBtnArr)
 
-    function Product(product) {
+    //forEach -> addEventListener('click', addItem)
+    aBtnArr.forEach(addBtn => {
+        console.log(addBtn)
+        addBtn.addEventListener('click', ()=>{
+            console.log('Button click')
+        })
+    });
+
+    //addItem{
+    //  shoppingCart.push(shopping cart[i])
+    //  localStorage.setItem('cartItem', JSON.stringify(shoppingCart));
+    //}
+
+    
+}
+
+
+    //push
+    /* shoppingCart.push() */
+
+    /* aBtnArr.forEach(element => 
+        console.log(element)
+    ); */
+
+    /* for (let i = 0; i < aBtnArr.length; i++) {
+        aBtnArr[i].addEventListener('click', ()=>{
+            console.log(i)
+        })
+    } */
+
+        /* function Product(product) {
         shoppingCart = Object.assign(shoppingCart, {
             product1: {"imgUrl": "./img/career.jpg",
             "productName": "綠髮碧璽金髮晶虎眼石黃水晶",
@@ -78,22 +110,20 @@ window.onload = function() {
             "productComment": "1"
           }
         })
-    }
+    } */
 
-    function add
+    /* function addItem(){
         for (let i = 0; i < aBtnArr.length; i++) {
             console.log('onclick')
-            console.log('product: '+ products)
       
             //push
-            shoppingCart.push(products)
+            shoppingCart.push(productList[x])
         
             console.log('shopping cart: '+ shoppingCart)
         
             //local storage
             localStorage.setItem('cartItem', JSON.stringify(shoppingCart));
-            alert(`${productList.proName} 已添加至我的購物車！`);
+            //alert(`${productList.proName} 已添加至我的購物車！`);
         }
-    }
-    aBtnArr[i].addEventListener('click', 
-}
+    } */
+

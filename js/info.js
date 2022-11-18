@@ -1,3 +1,5 @@
+var shoppingCart = []
+
 //Slide
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -14,6 +16,7 @@ function showSlides(n) {
   let productName = document.querySelector('.productName');
   let productPrice = document.querySelector('.price');
   let oldPrice = document.querySelector('.oldprice');
+  let addBtn = document.querySelector('#addBtn');
 
   if (n > slides.length) { slideIndex = 1 }
   if (n < 1) { slideIndex = slides.length }
@@ -29,34 +32,44 @@ function showSlides(n) {
   productName.innerHTML = dots[slideIndex - 1].dataset.proname;
   productPrice.innerHTML = dots[slideIndex - 1].dataset.price;
   oldPrice.innerHTML = dots[slideIndex - 1].dataset.oldprice;
+
+  addBtn.setAttribute('data-productname', dots[slideIndex - 1].dataset.proname)
+
+  addBtn.addEventListener('click', ()=>{
+    
+    //push into shoppingCart
+    
+
+    //local storage
+
+  })
 }
 
-/* var cartList = []
-var addBtn = document.querySelector('#addBtn')
-var products = document.querySelectorAll('.demo');
+
+/* var products = document.querySelectorAll('.demo');
 
 
 const addItem =()=>{
-  console.log('product: '+ products)
+  console.log(products)
 
   //push
-  cartList.push(products)
+  shoppingCart.push(products)
 
 
-  console.log('cart list: '+ cartList)
+  console.log(shoppingCart)
 
   //local storage
-  localStorage.setItem('cartItem', JSON.stringify(cartList));
+  localStorage.setItem('cartItem', JSON.stringify(shoppingCart));
   //alert(`${productItem.proName} 已添加至我的購物車！`);
 }
 
 addBtn.addEventListener('click', addItem) */
 
-var addBtn = document.querySelector('#addBtn')
+/* var addBtn = document.querySelector('#addBtn')
 
 const addItem =(e)=>{
   console.log(e.currentTarget.parentElement)
   e.currentTarget.parentElement
 }
 
-addBtn.addEventListener('click', (e)=>addItem(e))
+addBtn.addEventListener('click', (e)=>addItem(e)) */
