@@ -229,22 +229,54 @@ const retrieved =()=>{
             // console.log(check.className);
             if (check.className == "i_check i_acity") {
                 check.classList.remove("i_acity");
-
             } else {
                 check.classList.add("i_acity");
             }
             getAmount();
         }
 
+        //remove local storage
         var removeStorage = itemDiv.lastChild.getElementsByTagName("a")[0];
         removeStorage.onclick = function() {
             var result = confirm("確定刪除嗎?");
             if (result) {
-                oCar.removeChild(oDiv);
+                cartArea.removeChild(itemDiv);
                 number--;
                 getAmount();
             }
         }
+
+
+        //remove local storage
+        var removeStorage = document.querySelectorAll('.removeStorage')
+        console.log('removeStorage: '+removeStorage)
+
+        //const storage = localStorage.getItem('cartItem');
+        //const storageItem = (JSON.parse(storage))
+
+        /* for(let i=0; i<removeStorage.length; i++){
+            removeBtn[i].addEventListener('click', ()=>{
+                var result = confirm("確定刪除嗎?");
+                if (result) {
+                    window.localStorage.removeItem(removeStorage[i]);
+                    cartArea.removeChild(itemDiv)
+                    retrieved();
+                }
+            })
+        } */
+
+        removeStorage.forEach(removeBtn => {
+            removeBtn.addEventListener('click', ()=>{
+                var result = confirm("確定刪除嗎?");
+                if (result) {
+                    window.localStorage.removeItem('cartItem');
+                    cartArea.removeChild(itemDiv)
+                    console.log(storageItem)
+                    retrieved();
+                }
+            })
+        });
+
         var i_btn = document.getElementsByClassName("count_i");
         for (var k = 0; k < i_btn.length; k++) {
             i_btn[k].onclick = function() {
@@ -269,6 +301,7 @@ const retrieved =()=>{
                 getAmount();
             }
         }
+
         //獲取所有數量減號按鈕
         var d_btn = document.getElementsByClassName("count_d");
         for (k = 0; k < i_btn.length; k++) {
@@ -295,21 +328,6 @@ const retrieved =()=>{
                 getAmount();
             }
         }
-
-        //remove local storage
-        var removeStorage = document.querySelectorAll('.removeStorage')
-        console.log('removeStorage: '+removeStorage)
-        removeStorage.forEach(removeBtn => {
-            removeBtn.addEventListener('click', ()=>{
-                var result = confirm("確定刪除嗎?");
-                if (result) {
-                    window.localStorage.removeItem('cartItem');
-                    cartArea.removeChild(itemDiv)
-                    retrieved();
-                }
-            })
-        });
-        
     }
 }
 
@@ -332,11 +350,3 @@ function getAmount() {
 
 retrieved()
 window.addEventListener("storage", retrieved);
-
-/* setInterval(()=>{
-    if(find DOM){
-        retrieved()
-    }
-},3000) */
-
-/* retrieved() */
