@@ -226,12 +226,24 @@ const get =()=>{
     
     var itemDiv = document.createElement("div");
 
-    for (const property in storageName) {
+    /* for (const property in storageName) {
         console.log(`${property}: ${storageName[property]}`);
 
         //innerHTML into cartArea
         itemDiv.className = "flex-container hid";
         itemDiv.innerHTML += `<div class="name left"><span> + ${storageName} + </span></div>`;
+    } */
+
+    for (const property in storageName) {
+        console.log(`${property}: ${storageName[property]}`);
+
+        const itemDiv = document.createElement('div')
+        //innerHTML into cartArea
+        itemDiv.className = "flex-container hid";
+        itemDiv.innerHTML += `<div class="name left"><span> ${storageName[property]} </span></div>`;
+        // itemDiv.appendChild(newContent);
+        cartArea.appendChild(itemDiv)
+        // console.log(itemDiv.innerHTML + property)
     }
 }
 
