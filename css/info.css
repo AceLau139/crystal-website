@@ -189,12 +189,12 @@ img {
 }
 
 .container .btn img {
-  width: 20px;
-  height:20px;
+  width: 30px;
+  height: 30px;
 }
 
 .cart {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: white;
   font-weight: 520;
   padding:0.2rem;
@@ -211,9 +211,7 @@ img {
   .container article:last-child {
     padding: 12px;
   }
-
-
-  .column img {
+  img {
     border-radius: 100%;
     padding: 8px;
   }
@@ -226,10 +224,5 @@ img {
   .container .btn img {
     width: 50px;
     height: 50px;
-  }
-
-  .container .btn img {
-    width: 20px;
-    height:20px;
   }
 }
