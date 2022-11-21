@@ -1,6 +1,14 @@
 var shoppingCart = []
 let addBtn = document.querySelector('#addBtn');
 
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("demo");
+let captionText = document.getElementById("caption");
+let productName = document.querySelector('.productName');
+let productPrice = document.querySelector('.price');
+let oldPrice = document.querySelector('.oldprice');
+
 //Slide
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -10,14 +18,6 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  let productName = document.querySelector('.productName');
-  let productPrice = document.querySelector('.price');
-  let oldPrice = document.querySelector('.oldprice');
-
   if (n > slides.length) { slideIndex = 1 }
   if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
@@ -37,12 +37,22 @@ function showSlides(n) {
 }
 
 addBtn.addEventListener('click', ()=>{
-  var itemName = addBtn.dataset.productname
+  //var itemName = addBtn.dataset.productname
 
-  //push obj into shoppingCart
-  shoppingCart.push(itemName)
+  var itemUrl = dots[slideIndex - 1].src;
+  var itemName = dots[slideIndex - 1].dataset.proname;
+  var itemPrice = dots[slideIndex - 1].dataset.price
+  var productItem = {
+    'ProductUrl':itemUrl,
+    'ProductName':itemName, 
+    'productPrice':itemPrice
+  }
+
+  //push obj into shoppingCart 
+  shoppingCart.push(productItem)
   console.log(shoppingCart)
 
   //local storage
   localStorage.setItem('cartItem', JSON.stringify(shoppingCart));
 })
+

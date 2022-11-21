@@ -99,7 +99,6 @@ window.onload = function() {
                     number--;
                     getAmount();
                 }
-            
             }
             var i_btn = document.getElementsByClassName("count_i");
             for (var k = 0; k < i_btn.length; k++) {
@@ -217,37 +216,51 @@ var cartArea = document.querySelector('#car')
 var itemDiv = document.createElement('div')
 
 
-const get =()=>{
+const retrieved =()=>{
     const storage = localStorage.getItem('cartItem');
-    console.log(typeof storage)
-    const storageName = (JSON.parse(storage))
-    console.log(typeof storageName)
-    console.log(storageName)
-    
+    const storageItem = (JSON.parse(storage))
+    console.log(storageItem)
+
     var itemDiv = document.createElement("div");
 
-    /* for (const property in storageName) {
-        console.log(`${property}: ${storageName[property]}`);
-
-        //innerHTML into cartArea
-        itemDiv.className = "flex-container hid";
-        itemDiv.innerHTML += `<div class="name left"><span> + ${storageName} + </span></div>`;
-    } */
-
-    for (const property in storageName) {
-        console.log(`${property}: ${storageName[property]}`);
+    for (let i=0; i<storageItem.length; i++) {
+        //console.log(`${property}: ${storageItem[property]}`);
+        console.log(storage)
 
         const itemDiv = document.createElement('div')
         //innerHTML into cartArea
         itemDiv.className = "flex-container hid";
-        itemDiv.innerHTML += `<div class="name left"><span> ${storageName[property]} </span></div>`;
+        itemDiv.innerHTML += '<div class="check left"> <i class="i_check" id="i_check" onclick="i_check()" >√</i></div>';
+        itemDiv.innerHTML += `<div class="img left"><img src="${storageItem[i].ProductUrl}" ></div>`;
+        itemDiv.innerHTML += `<div class="name left"><span> ${storageItem[i].ProductName} </span></div>`;
+        itemDiv.innerHTML += `<div class="price left"><span> ${storageItem[i].productPrice} 元</span></div>`;
+        itemDiv.innerHTML +=' <div class="item_count_i"><div class="num_count"><div class="count_d">-</div><div class="c_num">1</div><div class="count_i">+</div></div></div>'
+        itemDiv.innerHTML += `<div class="subtotal left"><span> ${storageItem[i].productPrice} 元</span></div>`;
+        itemDiv.innerHTML += '<div class="ctrl left removeStorage"><a rel="nofollow" href="javascript:;">X</a></div>';
+        
         // itemDiv.appendChild(newContent);
         cartArea.appendChild(itemDiv)
         // console.log(itemDiv.innerHTML + property)
+
+        var removeStorage = document.querySelectorAll('.removeStorage')
+        console.log('removeStorage: '+removeStorage)
+        removeStorage.forEach(removeBtn => {
+            removeBtn.addEventListener('click', ()=>{
+                var result = confirm("確定刪除嗎?");
+                if (result) {
+                    window.localStorage.removeItem('cartItem');
+                    cartArea.removeChild(itemDiv)
+                    retrieved();
+                }
+            })
+        });
+        
     }
 }
 
-get()
+//setInterval(get, 1000);
+//if{}else{}
+retrieved()
 
 /* 
 var oDiv = document.createElement("div");
