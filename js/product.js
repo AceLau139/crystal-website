@@ -207,7 +207,7 @@ const retrieved =()=>{
 
     for (let i=0; i<storageItem.length; i++) {
         //console.log(`${property}: ${storageItem[property]}`);
-        console.log(storage)
+        console.log('storage: '+storage)
 
         const itemDiv = document.createElement('div')
         //innerHTML into cartArea
@@ -224,7 +224,7 @@ const retrieved =()=>{
         cartArea.appendChild(itemDiv)
         // console.log(itemDiv.innerHTML + property)
 
-        /* var check = itemDiv.firstChild.getElementsByTagName("i")[0];
+        var check = itemDiv.firstChild.getElementsByTagName("i")[0];
         check.onclick = function() {
             // console.log(check.className);
             if (check.className == "i_check i_acity") {
@@ -294,7 +294,7 @@ const retrieved =()=>{
                 //計算總計值
                 getAmount();
             }
-        } */
+        }
 
         //remove local storage
         var removeStorage = document.querySelectorAll('.removeStorage')
@@ -330,11 +330,13 @@ function getAmount() {
     }
 }
 
-//setInterval(get, 1000);
+retrieved()
+window.addEventListener("storage", retrieved);
+
 /* setInterval(()=>{
     if(find DOM){
         retrieved()
     }
 },3000) */
 
-retrieved()
+/* retrieved() */

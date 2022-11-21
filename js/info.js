@@ -9,8 +9,6 @@ let productName = document.querySelector('.productName');
 let productPrice = document.querySelector('.price');
 let oldPrice = document.querySelector('.oldprice');
 
-let myStorage = window.localStorage;
-
 //Slide
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -32,7 +30,7 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
   captionText.innerHTML = dots[slideIndex - 1].alt;
   productName.innerHTML = dots[slideIndex - 1].dataset.proname;
-  productPrice.innerHTML = dots[slideIndex - 1].dataset.price;
+  productPrice.innerHTML = `$${dots[slideIndex - 1].dataset.price}`;
   oldPrice.innerHTML = dots[slideIndex - 1].dataset.oldprice;
 
   addBtn.setAttribute('data-productname', dots[slideIndex - 1].dataset.proname)
