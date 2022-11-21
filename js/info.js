@@ -9,6 +9,8 @@ let productName = document.querySelector('.productName');
 let productPrice = document.querySelector('.price');
 let oldPrice = document.querySelector('.oldprice');
 
+let myStorage = window.localStorage;
+
 //Slide
 let slideIndex = 1;
 showSlides(slideIndex);

@@ -79,7 +79,6 @@ window.onload = function() {
             oDiv.innerHTML += '<div class="ctrl left"><a rel="nofollow" href="javascript:;">X</a></div>';
 
             oCar.appendChild(oDiv);
-            var flag = true;
             var check = oDiv.firstChild.getElementsByTagName("i")[0];
             check.onclick = function() {
                 // console.log(check.className);
@@ -194,23 +193,6 @@ function checkAll() {
     getAmount();
 }
 
-//價值合計
-function getAmount() {
-    // console.log(ys);
-    ns = document.getElementsByClassName("i_acity");
-    //console.log(ns);
-    sum = 0;
-    //選中框
-    document.getElementById("price_num").innerText = sum;
-    for (y = 0; y < ns.length; y++) {
-        //小計
-        amount_info = ns[y].parentElement.parentElement.lastElementChild.previousElementSibling;
-        num = parseInt(amount_info.innerText);
-        sum += num;
-        document.getElementById("price_num").innerText = sum;
-    }
-}
-
 // local storage
 var cartArea = document.querySelector('#car')
 var itemDiv = document.createElement('div')
@@ -242,6 +224,79 @@ const retrieved =()=>{
         cartArea.appendChild(itemDiv)
         // console.log(itemDiv.innerHTML + property)
 
+        /* var check = itemDiv.firstChild.getElementsByTagName("i")[0];
+        check.onclick = function() {
+            // console.log(check.className);
+            if (check.className == "i_check i_acity") {
+                check.classList.remove("i_acity");
+
+            } else {
+                check.classList.add("i_acity");
+            }
+            getAmount();
+        }
+
+        var removeStorage = itemDiv.lastChild.getElementsByTagName("a")[0];
+        removeStorage.onclick = function() {
+            var result = confirm("確定刪除嗎?");
+            if (result) {
+                oCar.removeChild(oDiv);
+                number--;
+                getAmount();
+            }
+        }
+        var i_btn = document.getElementsByClassName("count_i");
+        for (var k = 0; k < i_btn.length; k++) {
+            i_btn[k].onclick = function() {
+                bt = this;
+                //小計
+                at = this.parentElement.parentElement.nextElementSibling;
+                //單價
+                pt = this.parentElement.parentElement.previousElementSibling;
+                //數量值
+                node = bt.parentNode.childNodes[1];
+                //console.log(node);
+                num = node.innerText;
+                num = parseInt(num);
+                num++;
+                node.innerText = num;
+                //單價
+                price = pt.innerText;
+                price = price.substring(0, price.length - 1);
+                //計算小計值
+                at.innerText = price * num + '元';
+                //計算總計值
+                getAmount();
+            }
+        }
+        //獲取所有數量減號按鈕
+        var d_btn = document.getElementsByClassName("count_d");
+        for (k = 0; k < i_btn.length; k++) {
+            d_btn[k].onclick = function() {
+                bt = this;
+                //小計
+                at = this.parentElement.parentElement.nextElementSibling;
+                //單價
+                pt = this.parentElement.parentElement.previousElementSibling;
+                //c_num節點
+                node = bt.parentNode.childNodes[1];
+                num = node.innerText;
+                num = parseInt(num);
+                if (num > 1) {
+                    num--;
+                }
+                node.innerText = num;
+                //單價
+                price = pt.innerText;
+                price = price.substring(0, price.length - 1);
+                //計算小計值		
+                at.innerText = price * num + '元';
+                //計算總計值
+                getAmount();
+            }
+        } */
+
+        //remove local storage
         var removeStorage = document.querySelectorAll('.removeStorage')
         console.log('removeStorage: '+removeStorage)
         removeStorage.forEach(removeBtn => {
@@ -258,38 +313,28 @@ const retrieved =()=>{
     }
 }
 
+//價值合計
+function getAmount() {
+    // console.log(ys);
+    ns = document.getElementsByClassName("i_acity");
+    //console.log(ns);
+    sum = 0;
+    //選中框
+    document.getElementById("price_num").innerText = sum;
+    for (y = 0; y < ns.length; y++) {
+        //小計
+        amount_info = ns[y].parentElement.parentElement.lastElementChild.previousElementSibling;
+        num = parseInt(amount_info.innerText);
+        sum += num;
+        document.getElementById("price_num").innerText = sum;
+    }
+}
+
 //setInterval(get, 1000);
-//if{}else{}
+/* setInterval(()=>{
+    if(find DOM){
+        retrieved()
+    }
+},3000) */
+
 retrieved()
-
-/* 
-var oDiv = document.createElement("div");
-var data = product[this.index];
-oDiv.className = "flex-container hid";
-oDiv.innerHTML += '<div class="check left"> <i class="i_check" id="i_check" onclick="i_check()" >√</i></div>';
-oDiv.innerHTML += '<div class="img left"><img src="' + data["imgUrl"] + '" ></div>';
-oDiv.innerHTML += '<div class="name left"><span>' + data["productName"] + '</span></div>';
-oDiv.innerHTML += '<div class="price left"><span>' + data["productPrice"] + '元</span></div>';
-oDiv.innerHTML +=' <div class="item_count_i"><div class="num_count"><div class="count_d">-</div><div class="c_num">1</div><div class="count_i">+</div></div></div>'
-oDiv.innerHTML += '<div class="subtotal left"><span>' + data["productPrice"] + '元</span></div>'
-oDiv.innerHTML += '<div class="ctrl left"><a rel="nofollow" href="javascript:;">X</a></div>';
- */
-
-/* cartArea.addEventListener('click', get) */
-
-
-
-//if(find DOM){
-//  get()
-//}
-//else{
-//  X update
-//}
-
-
-//
-/* for (const property in products) {
-    console.log(`${property}: ${products[property]}`);
-} */
-
-/* localStorage.removeItem('myCat'); */
