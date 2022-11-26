@@ -70,7 +70,7 @@ window.onload = function() {
             var oDiv = document.createElement("div");
             var data = product[this.index];
             oDiv.className = "flex-container hid";
-            oDiv.innerHTML += '<div class="check left"> <i class="i_check i_acity" id="i_check">√</i></div>';
+            oDiv.innerHTML += '<div class="check left"> <i class="i_check" id="i_check" onclick="i_check()" >√</i></div>';
             oDiv.innerHTML += '<div class="img left"><img src="' + data["imgUrl"] + '" ></div>';
             oDiv.innerHTML += '<div class="name left"><span>' + data["productName"] + '</span></div>';
             oDiv.innerHTML += '<div class="price left"><span>' + data["productPrice"] + '元</span></div>';
@@ -78,28 +78,18 @@ window.onload = function() {
             oDiv.innerHTML += '<div class="subtotal left"><span>' + data["productPrice"] + '元</span></div>'
             oDiv.innerHTML += '<div class="ctrl left"><a rel="nofollow" href="javascript:;">X</a></div>';
 
-            //check upselling product
             oCar.appendChild(oDiv);
             var check = oDiv.firstChild.getElementsByTagName("i")[0];
-            function upsellingCheck(){
-                getAmount();
-                check.onclick = function() {
-                    // console.log(check.className);
-                    if (check.className == "i_check i_acity") {
-                        check.classList.remove("i_acity");
-    
-                    } else {
-                        check.classList.add("i_acity");
-                    }
-                    getAmount();
+            check.onclick = function() {
+                // console.log(check.className);
+                if (check.className == "i_check i_acity") {
+                    check.classList.remove("i_acity");
+
+                } else {
+                    check.classList.add("i_acity");
                 }
+                getAmount();
             }
-
-            check.addEventListener('load', upsellingCheck())
-
-
-
-            //delete upselling product
             var delBtn = oDiv.lastChild.getElementsByTagName("a")[0];
             delBtn.onclick = function() {
                 var result = confirm("確定刪除嗎?");
@@ -221,85 +211,57 @@ const retrieved =()=>{
 
         const itemDiv = document.createElement('div')
         //innerHTML into cartArea
-        itemDiv.className = "item-container hid";
-        itemDiv.innerHTML += '<div class="check left"> <i class="i_check i_acity" id="i_check" onclick="i_check()" >√</i></div>';
+        itemDiv.className = "flex-container hid";
+        itemDiv.innerHTML += '<div class="check left"> <i class="i_check" id="i_check" onclick="i_check()" >√</i></div>';
         itemDiv.innerHTML += `<div class="img left"><img src="${storageItem[i].ProductUrl}" ></div>`;
         itemDiv.innerHTML += `<div class="name left"><span> ${storageItem[i].ProductName} </span></div>`;
         itemDiv.innerHTML += `<div class="price left"><span> ${storageItem[i].productPrice} 元</span></div>`;
         itemDiv.innerHTML +=' <div class="item_count_i"><div class="num_count"><div class="count_d">-</div><div class="c_num">1</div><div class="count_i">+</div></div></div>'
         itemDiv.innerHTML += `<div class="subtotal left"><span> ${storageItem[i].productPrice} 元</span></div>`;
         itemDiv.innerHTML += '<div class="ctrl left removeStorage"><a rel="nofollow" href="javascript:;">X</a></div>';
+        
+        // itemDiv.appendChild(newContent);
+        cartArea.appendChild(itemDiv)
+        // console.log(itemDiv.innerHTML + property)
 
-        //check local storage product
         var check = itemDiv.firstChild.getElementsByTagName("i")[0];
         check.onclick = function() {
             // console.log(check.className);
             if (check.className == "i_check i_acity") {
                 check.classList.remove("i_acity");
-
             } else {
                 check.classList.add("i_acity");
             }
             getAmount();
         }
 
-        //check local storage product
-        cartArea.appendChild(itemDiv)
-        var check = itemDiv.firstChild.getElementsByTagName("i")[0];
-        function storageCheck(){
-            getAmount();
-            check.onclick = function() {
-                // console.log(check.className);
-                if (check.className == "i_check i_acity") {
-                    check.classList.remove("i_acity");
-
-                } else {
-                    check.classList.add("i_acity");
-                }
-                getAmount();
-            }
-        }
-
-        check.addEventListener('load', storageCheck())
-
-        //remove local storage
-        var removeStorage = itemDiv.lastChild.getElementsByTagName("a")[0];
-        removeStorage.onclick = function() {
-            var result = confirm("確定刪除嗎?");
-            if (result) {
-                cartArea.removeChild(itemDiv);
-                number--;
-                getAmount();
-            }
-        }
-
-
+        
         //remove local storage
         var removeStorage = document.querySelectorAll('.removeStorage')
-        console.log('removeStorage: '+removeStorage)
 
         //const storage = localStorage.getItem('cartItem');
         //const storageItem = (JSON.parse(storage))
 
+        //for loop
         /* for(let i=0; i<removeStorage.length; i++){
             removeBtn[i].addEventListener('click', ()=>{
                 var result = confirm("確定刪除嗎?");
                 if (result) {
-                    window.localStorage.removeItem(removeStorage[i]);
+                    window.localStorage.removeItem(storage[i]);
                     cartArea.removeChild(itemDiv)
                     retrieved();
                 }
             })
         } */
 
+        //forEach
         removeStorage.forEach(removeBtn => {
             removeBtn.addEventListener('click', ()=>{
                 var result = confirm("確定刪除嗎?");
                 if (result) {
                     window.localStorage.removeItem('cartItem');
-                    cartArea.removeChild(itemDiv)
+                    //cartArea.removeChild(itemDiv)
                     console.log(storageItem)
-                    retrieved();
                 }
             })
         });
@@ -377,9 +339,3 @@ function getAmount() {
 
 retrieved()
 window.addEventListener("storage", retrieved);
-
-window.addEventListener('storage', () => {
-  // When local storage changes, dump the list to
-  // the console.
-  console.log("storage changed");
-});

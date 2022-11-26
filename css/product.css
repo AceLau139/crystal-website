@@ -318,6 +318,12 @@ body {
     background-color: #b700ff !important;
 }
 
+.item-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 @media only screen and (max-width: 991.98px){
     .box_head{
         display: none;
@@ -331,5 +337,9 @@ body {
         width: 25%;
         height: 25%;
         margin: 0 auto 1rem;
+    }
+
+    .item-container{
+        display: block;
     }
 }
