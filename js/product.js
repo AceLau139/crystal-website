@@ -109,6 +109,7 @@ window.onload = function() {
                     getAmount();
                 }
             }
+
             var i_btn = document.getElementsByClassName("count_i");
             for (var k = 0; k < i_btn.length; k++) {
                 i_btn[k].onclick = function() {
@@ -133,6 +134,7 @@ window.onload = function() {
                     getAmount();
                 }
             }
+
             //獲取所有數量減號按鈕
             var d_btn = document.getElementsByClassName("count_d");
             for (k = 0; k < i_btn.length; k++) {
@@ -168,7 +170,6 @@ window.onload = function() {
                     getAmount();
                 }
             }
-
         }
     }
 }
@@ -210,7 +211,7 @@ var itemDiv = document.createElement('div')
 
 const retrieved =()=>{
     const storage = localStorage.getItem('cartItem');
-    const storageItem = (JSON.parse(storage))
+    const storageItem = (JSON.parse(storage)) //JSON string to JS object
     console.log(storageItem)
 
     var itemDiv = document.createElement("div");
@@ -222,7 +223,7 @@ const retrieved =()=>{
         const itemDiv = document.createElement('div')
         //innerHTML into cartArea
         itemDiv.className = "item-container hid";
-        itemDiv.innerHTML += '<div class="check left"> <i class="i_check i_acity" id="i_check" onclick="i_check()" >√</i></div>';
+        itemDiv.innerHTML += '<div class="check left"><i class="i_check i_acity" id="i_check" onclick="i_check()" >√</i></div>';
         itemDiv.innerHTML += `<div class="img left"><img src="${storageItem[i].ProductUrl}" ></div>`;
         itemDiv.innerHTML += `<div class="name left"><span> ${storageItem[i].ProductName} </span></div>`;
         itemDiv.innerHTML += `<div class="price left"><span> ${storageItem[i].productPrice} 元</span></div>`;

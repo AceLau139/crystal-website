@@ -53,8 +53,9 @@ addBtn.addEventListener('click', ()=>{
   console.log(shoppingCart)
 
   //local storage
-  localStorage.setItem('cartItem', JSON.stringify(shoppingCart));
+  localStorage.setItem('cartItem', JSON.stringify(shoppingCart)); //JS object to JSON string
 })
+
 window.addEventListener('storage', () => {
   // When local storage changes, dump the list to
   // the console.
